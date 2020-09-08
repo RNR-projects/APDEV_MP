@@ -23,4 +23,16 @@ class PongLayer extends cc.LayerColor{
 
         this.addComponent(new GameLayerResizer());
     }
+
+    GameOver(score){
+        //Stops all buttons from working
+        //temporary game over
+        for(let i = 0; i < 8; i++){
+            for(let j = 0; j < 8; j++){
+                this.getChildByName(`block${i*8}${j}`).enabled = false;
+            }
+        }
+        // this.addComponent(new ToResultScene(score));
+        cc.director.runScene(new ResultScene(score));
+    }
 }
