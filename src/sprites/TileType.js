@@ -4,32 +4,13 @@ class TileType extends ccui.Layout {
 
         this.xPos = xPosition;
         this.type = type;
+
+        this.movement = new TileMovement();
+        this.addComponent(this.movement);
     }
 
     CreatePiece() {
         let size = this.getParent();
-
-        /*var tex;
-        switch (this.type) {
-            case 1:
-                tex = res.Star_png;
-                break;
-            case 2:
-                tex = res.Tree_png;
-                break;
-            case 3:
-                tex = res.Fish_png;
-                break;
-            case 4:
-                tex = res.Marble_png;
-                break;
-            case 5:
-                tex = res.Gem_png;
-                break;
-            case 6:
-                tex = res.Mushroom_png;
-                break;
-        }*/
 
         let image = new cc.Sprite();
         image.setTexture(res.tileSpriteSheet_png);
@@ -62,48 +43,5 @@ class TileType extends ccui.Layout {
         image.setPosition(this.xPos, size.height + 45);
 
         this.addChild(image);
-    }
-
-    FallDown(amount) {
-        let size = this.getParent();
-        let movingTo = cc.moveBy(1, 0, - size.height / 8 * amount);
-        this.runAction(new cc.sequence(movingTo));
-    }
-
-    FallDownWithWait(amount) {
-        let size = this.getParent();
-        let movingTo = cc.moveBy(1, 0, - size.height / 8 * amount);
-        let callFunc = new cc.callFunc(this.OnFinish, this);
-        this.runAction(new cc.sequence(movingTo, callFunc));
-    }
-
-    MoveLeft() {
-        let size = this.getParent();
-        let movingTo = cc.moveBy(1, - size.width / 8, 0);
-        let callFunc = new cc.callFunc(this.OnFinish, this);
-        this.runAction(new cc.sequence(movingTo, callFunc));
-    }
-
-    MoveRight() {
-        let size = this.getParent();
-        let movingTo = cc.moveBy(1, size.width / 8, 0);
-        this.runAction(new cc.sequence(movingTo));
-    }
-
-    MoveDown() {
-        let size = this.getParent();
-        let movingTo = cc.moveBy(1, 0, - size.height / 8);
-        let callFunc = new cc.callFunc(this.OnFinish, this);
-        this.runAction(new cc.sequence(movingTo, callFunc));
-    }
-
-    MoveUp() {
-        let size = this.getParent();
-        let movingTo = cc.moveBy(1, 0, size.height / 8);
-        this.runAction(new cc.sequence(movingTo));
-    }
-
-    OnFinish() {
-        this.getParent().CheckForMatches();
     }
 }
