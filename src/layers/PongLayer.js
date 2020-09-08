@@ -32,7 +32,7 @@ class PongLayer extends cc.LayerColor{
         for (var i = 0; i < 8; i++) {
             var eachRow = [];
             for (var j = 0; j < 8; j++) {
-                var newTile = new TileType(this.width / 8 * i + 48, i * 8 + j + 4);
+                var newTile = new TileType(this.width / 8 * i + 48, Math.floor(Math.random() * 6) + 1);
                 this.addChild(newTile);
                 newTile.CreatePiece();
                 newTile.FallDown(8 - j);
@@ -40,12 +40,6 @@ class PongLayer extends cc.LayerColor{
             }
             this.TileLocations.push(eachRow);
         }
-        this.TileLocations[0][0].type = 2;
-        this.TileLocations[1][2].type = 2;
-        this.TileLocations[2][0].type = 3;
-        this.TileLocations[0][3].type = 3;
-        this.TileLocations[1][1].type = 3;
-        this.TileLocations[2][2].type = 2;
     }
 
     RemoveTile(xIndex, yIndex) {
@@ -58,7 +52,7 @@ class PongLayer extends cc.LayerColor{
             this.TileLocations[xIndex][i] = this.TileLocations[xIndex][i + 1];
             this.TileLocations[xIndex][i].FallDown(1);
         }
-        var newTile = new TileType(this.width / 8 * xIndex + 48, Math.random() * 100);
+        var newTile = new TileType(this.width / 8 * xIndex + 48, Math.floor(Math.random() * 6) + 1);
         this.addChild(newTile);
         this.TileLocations[xIndex][7] = newTile;
         newTile.CreatePiece();
