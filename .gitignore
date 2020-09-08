@@ -1,2 +1,6 @@
 frameworks/
 .vs/
+node_modules
+package-lock.json
+.vscode
+.es5

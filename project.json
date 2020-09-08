@@ -11,33 +11,33 @@
         "cocos2d",
         "extensions"
     ],
-  "jsListOrder": [
-    "src/components/ResizeListener.js",
-    "src/**/*.js"
-  ],
-  "jsList": [
-
-    "src/components/ResizeListener.js",
-    "src/components/GameLayerResizer.js",
-    "src/components/EnableOnLandscape.js",
-    "src/components/EnableOnPortrait.js",
-    "src/components/ToMainScene.js",
-    "src/components/paddleMovement.js",
-    "src/components/ballMovement.js",
-    "src/components/FitToWindow.js",
-    "src/layers/PongLayer.js",
-    "src/layers/TitleLayer.js",
-    "src/layouts/LandscapeLayout.js",
-    "src/layouts/PortraitLayout.js",
-    "src/layouts/NineSliceLayout.js",
-    "src/layouts/RelativeLayout.js",
-    "src/layouts/PauseLayout.js",
-    "src/resource.js",
-    "src/scenes/MainScene.js",
-    "src/scenes/TitleScene.js",
-    "src/sprites/Paddle.js",
-    "src/sprites/Ball.js",
-    "src/sprites/Match3Block.js",
-    "src/sprites/TileType.js"
-  ]
+    "jsListOrder": [
+        "src/components/ResizeListener.js",
+        "src/**/*.js"
+    ],
+    "jsList": [
+        "src/components/ResizeListener.js",
+        "src/components/ballMovement.js",
+        "src/components/EnableOnLandscape.js",
+        "src/components/EnableOnPortrait.js",
+        "src/components/FitToWindow.js",
+        "src/components/GameLayerResizer.js",
+        "src/components/paddleMovement.js",
+        "src/components/TileMovement.js",
+        "src/components/ToMainScene.js",
+        "src/layers/PongLayer.js",
+        "src/layers/TitleLayer.js",
+        "src/layouts/LandscapeLayout.js",
+        "src/layouts/NineSliceLayout.js",
+        "src/layouts/PauseLayout.js",
+        "src/layouts/PortraitLayout.js",
+        "src/layouts/RelativeLayout.js",
+        "src/resource.js",
+        "src/scenes/MainScene.js",
+        "src/scenes/TitleScene.js",
+        "src/sprites/Ball.js",
+        "src/sprites/Match3Block.js",
+        "src/sprites/Paddle.js",
+        "src/sprites/TileType.js"
+    ]
 }

@@ -16,6 +16,7 @@ class PongLayer extends cc.LayerColor{
         this.isSwappingTiles = false;
         this.clearedSomeTiles = false;
     }
+    
 
     CreateGrid() {
         for (var i = 0; i < 8; i++) {
@@ -151,6 +152,7 @@ class PongLayer extends cc.LayerColor{
             for (var j = 7; j > -1; j--) {
                 if (matchedBlocks[i][j]) {
                     this.RemoveTile(i, j);
+                    this.getParent().updateScores()
                 }
             }
         }
