@@ -9,12 +9,58 @@ class TileType extends ccui.Layout {
     CreatePiece() {
         let size = this.getParent();
 
-        let image = new ccui.ImageView();
-        image.loadTexture("res/star.png");
-        image.ignoreContentAdaptWithSize(false);
-        image.setContentSize(cc.size(50, 50));
+        /*var tex;
+        switch (this.type) {
+            case 1:
+                tex = res.Star_png;
+                break;
+            case 2:
+                tex = res.Tree_png;
+                break;
+            case 3:
+                tex = res.Fish_png;
+                break;
+            case 4:
+                tex = res.Marble_png;
+                break;
+            case 5:
+                tex = res.Gem_png;
+                break;
+            case 6:
+                tex = res.Mushroom_png;
+                break;
+        }*/
+
+        let image = new cc.Sprite();
+        image.setTexture(res.tileSpriteSheet_png);
+        switch (this.type) {
+            case 1:
+                image.setTextureRect(cc.rect(0, 0, 64, 64));
+                break;
+            case 2:
+                image.setTextureRect(cc.rect(64, 0, 64, 64));
+                break;
+            case 3:
+                image.setTextureRect(cc.rect(0, 64, 64, 64));
+                break;
+            case 4:
+                image.setTextureRect(cc.rect(64, 64, 64, 64));
+                break;
+            case 5:
+                image.setTextureRect(cc.rect(0, 128, 128, 128));
+                image.setScaleY(0.5);
+                image.setScaleX(0.5);
+                break;
+            case 6:
+                image.setTextureRect(cc.rect(0, 256, 64, 64));
+                break;
+        }
+
+        image.setScaleX(image.getScaleX() * 50 / 64);
+        image.setScaleY(image.getScaleY() * 50 / 64);
 
         image.setPosition(this.xPos, size.height + 45);
+
         this.addChild(image);
     }
 
