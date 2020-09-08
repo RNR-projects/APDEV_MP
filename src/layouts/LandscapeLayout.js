@@ -13,19 +13,36 @@ class LandscapeLayout extends ccui.RelativeBox{
         let layoutParameter = new ccui.RelativeLayoutParameter();
         layoutParameter.setAlign(ccui.RelativeLayoutParameter.PARENT_TOP_LEFT);
         score.setLayoutParameter(layoutParameter);
+
+        let timetext = `Time Left: ${this.getParent().time}`;
+        let time = new ccui.Text(timetext, "Pixel", 36);
+        
+        let tlayoutParameter = new ccui.RelativeLayoutParameter();
+        tlayoutParameter.setAlign(ccui.RelativeLayoutParameter.PARENT_TOP_RIGHT);
+        time.setLayoutParameter(tlayoutParameter);
         
         this.addChild(score);
+        this.addChild(time);        
     }
 
     updateText() {
         let text = `Score: ${this.getParent().score}`;
         let score = new ccui.Text(text, "Pixel", 36);
+
+        let timetext = `Time Left: ${this.getParent().time}`;
+        let time = new ccui.Text(timetext, "Pixel", 36);
+
         this.removeAllChildren(true);
 
         let layoutParameter = new ccui.RelativeLayoutParameter();
         layoutParameter.setAlign(ccui.RelativeLayoutParameter.PARENT_TOP_LEFT);
         score.setLayoutParameter(layoutParameter);
-
+        
+        let tlayoutParameter = new ccui.RelativeLayoutParameter();
+        tlayoutParameter.setAlign(ccui.RelativeLayoutParameter.PARENT_TOP_RIGHT);
+        time.setLayoutParameter(tlayoutParameter);
+        
+        this.addChild(time);
         this.addChild(score);
     }
 }

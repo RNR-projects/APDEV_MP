@@ -50,6 +50,12 @@ class NineSliceLayout extends ccui.Layout{
         popUp.addChild(button);
     }
     onClick(){
+        //enables all the buttons(Match3Blocks)
+        for(let i = 0; i < 8; i++){
+            for(let j = 0; j < 8; j++){
+                this.getParent().getParent().getChildByName("game").getChildByName(`block${i*8}${j}`).enabled = true;
+            }
+        }
         let scaleTo = new cc.ScaleTo(0.2,0.0);
         let callFunc = new cc.callFunc(this.onFinish, this);
         scaleTo = new cc.EaseBackIn(scaleTo)

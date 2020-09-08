@@ -27,6 +27,12 @@ class PauseLayout extends ccui.Layout{
     onClick() {
         if (!this.getParent().isPaused) {
             let popup = new NineSliceLayout();
+            //disables all the buttons(Match3Blocks)
+            for(let i = 0; i < 8; i++){
+                for(let j = 0; j < 8; j++){
+                    this.getParent().getChildByName("game").getChildByName(`block${i*8}${j}`).enabled = false;
+                }
+            }
             this.getParent().isPaused = true;
             this.addChild(popup);
         }
