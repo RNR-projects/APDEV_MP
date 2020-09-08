@@ -26,22 +26,6 @@ class Match3Block extends ccui.Layout{
         this.addChild(button);
     }
     onClick() {
-        this.getParent().SelectTile(this.xIndex, this.yIndex);
+        this.getParent().interactibility.SelectTile(this.xIndex, this.yIndex);
     }
-    onFinish() {
-        this.getParent().getParent().isPaused = false;
-        this.getParent().removeChild(this);
-    }
-
-    /*constructor(xPos, yPos, width, height){
-        super();
-        this.x = xPos + 5;
-        this.y = yPos + 5;  
-        this.width = width;
-        this.height = height;
-    }
-    onEnter(){
-        super.onEnter();
-        this.drawRect(cc.p(0,0), cc.p(this.width, this.height), cc.color(0,0,255,255));  
-    }*/
 }

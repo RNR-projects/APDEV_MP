@@ -32,7 +32,7 @@ class MainScene extends cc.Scene{
                 //temporary game over
                 for(let i = 0; i < 8; i++){
                     for(let j = 0; j < 8; j++){
-                        this.getParent().getChildByName("game").getChildByName(`block${i*8}${j}`).enabled = false;
+                        this.getParent().getChildByName("game").getChildByName(`block${i*8+j}`).enabled = false;
                     }
                 }
             }
