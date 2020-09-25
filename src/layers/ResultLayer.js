@@ -3,5 +3,6 @@ class ResultLayer extends cc.Layer{
         super();
         this.finalscore = score;
         this.addChild(new ResultLayout(this.finalscore));
+        this.addChild(new ResultsPortraitLayout(this.finalscore));
     }
 }

@@ -29,7 +29,7 @@ class PortraitLayout extends ccui.RelativeBox{
         let text = `Score: ${this.getParent().score}`;
         let score = new ccui.Text(text, "Pixel", 36);
 
-        let timetext = `${this.getParent().time}`;
+        let timetext = `Time Left: ${this.getParent().time}`;
         let time = new ccui.Text(timetext, "Pixel", 36);
         
         this.removeAllChildren(true);
@@ -39,7 +39,8 @@ class PortraitLayout extends ccui.RelativeBox{
         score.setLayoutParameter(layoutParameter);
         
         let tlayoutParameter = new ccui.RelativeLayoutParameter();
-        tlayoutParameter.setAlign(ccui.RelativeLayoutParameter.PARENT_TOP_RIGHT);
+        tlayoutParameter.setAlign(ccui.RelativeLayoutParameter.PARENT_TOP_CENTER_HORIZONTAL);
+        tlayoutParameter.setMargin(0, 50, 0, 0);
         time.setLayoutParameter(tlayoutParameter);
         
         this.addChild(score);

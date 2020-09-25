@@ -17,10 +17,12 @@ class MainScene extends cc.Scene{
         let portraitUI = new PortraitLayout();
         portraitUI.setName("portrait");
         let pauseButton = new PauseLayout();
+        let pausePortraitButton = new PausePortraitLayout();
         
         this.addChild(landscapeUI);
         this.addChild(portraitUI);
         this.addChild(pauseButton);
+        this.addChild(pausePortraitButton);
 
         //Timer
         this.countdown = setInterval( () => {

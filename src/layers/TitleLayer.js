@@ -3,7 +3,7 @@ class TitleLayer extends cc.Layer{
         super();
 
         let size = cc.winSize;
-        let titleLabel = new cc.LabelTTF("PONG", 'Pixel', 64);
+        let titleLabel = new cc.LabelTTF("GDAPDEV Game", 'Pixel', 64);
         titleLabel.x = size.width / 2;
         titleLabel.y = size.height / 2;
         this.addChild(titleLabel);
