@@ -17,10 +17,14 @@ class MainScene extends cc.Scene{
         let portraitUI = new PortraitLayout();
         portraitUI.setName("portrait");
         let pauseButton = new PauseLayout();
+        let pausePortraitButton = new PausePortraitLayout();
         
         this.addChild(landscapeUI);
         this.addChild(portraitUI);
         this.addChild(pauseButton);
+        this.addChild(pausePortraitButton);
+
+        //Timer
         this.countdown = setInterval( () => {
             if(!this.isPaused){
                 this.time--;
@@ -29,12 +33,7 @@ class MainScene extends cc.Scene{
             }
             if(this.time <= 0){
                 clearInterval(this.countdown);
-                //temporary game over
-                for(let i = 0; i < 8; i++){
-                    for(let j = 0; j < 8; j++){
-                        this.getParent().getChildByName("game").getChildByName(`block${i*8+j}`).enabled = false;
-                    }
-                }
+                this.getChildByName("game").GameOver(this.score);
             }
         }, 1000); //1000 will  run it every 1 second
     }
