@@ -1,4 +1,4 @@
-class MainScene extends cc.Scene{    
+class MainScene extends cc.Scene{//Scene that contains the game proper
     constructor(){
         super();
         this.time = 120;
@@ -7,16 +7,16 @@ class MainScene extends cc.Scene{
     }
     onEnter(){
         super.onEnter();
-        
-        let pongLayer = new PongLayer();
-        pongLayer.setName("game");
-        this.addChild(pongLayer);
-        
-        let landscapeUI = new LandscapeLayout();
+        //game layer
+        let gameLayer = new Match3Layer();
+        gameLayer.setName("game");
+        this.addChild(gameLayer);
+        //UI layouts
+        let landscapeUI = new GameTextLandscapeLayout();
         landscapeUI.setName("landscape");
-        let portraitUI = new PortraitLayout();
+        let portraitUI = new GameTextPortraitLayout();
         portraitUI.setName("portrait");
-        let pauseButton = new PauseLayout();
+        let pauseButton = new PauseLandscapeLayout();
         let pausePortraitButton = new PausePortraitLayout();
         
         this.addChild(landscapeUI);
@@ -26,18 +26,18 @@ class MainScene extends cc.Scene{
 
         //Timer
         this.countdown = setInterval( () => {
-            if(!this.isPaused){
+            if(!this.isPaused){//update the UI every second
                 this.time--;
                 this.getChildByName("landscape").updateText();
                 this.getChildByName("portrait").updateText();
             }
-            if(this.time <= 0){
+            if(this.time <= 0){//when time is up head to the results screen
                 clearInterval(this.countdown);
                 this.getChildByName("game").GameOver(this.score);
             }
-        }, 1000); //1000 will  run it every 1 second
+        }, 1000); //1000 will  run it every 1 second/it is in ms
     }
-    
+    //every time the score should increase the text in the UI should update
     updateScores() {
         this.score += 10;
         this.getChildByName("landscape").updateText();

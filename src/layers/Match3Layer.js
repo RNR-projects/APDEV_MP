@@ -1,7 +1,7 @@
-class PongLayer extends cc.LayerColor{
+class Match3Layer extends cc.LayerColor{//Game layer
     constructor(){
         super(cc.color(0, 100, 0, 255), 800, 700);
-
+        //Create the components needed for the match 3 game
         this.boardMaker = new BoardMaker();
         this.boardMaker.setName("boardMaker");
         this.addComponent(this.boardMaker);
@@ -14,13 +14,13 @@ class PongLayer extends cc.LayerColor{
         this.interactibility = new BoardInteractibility();
         this.interactibility.setName("interactibility");
         this.addComponent(this.interactibility);
-
+        //Initialize the components' variables to be used in the other components
         this.tileManager.Init();
         this.interactibility.Init();
-
+        //Create the starting board for the game session
         this.boardMaker.CreateGrid();
         this.boardMaker.FillWithTiles();
-
+        
         this.addComponent(new GameLayerResizer());
     }
 

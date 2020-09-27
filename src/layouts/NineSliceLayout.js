@@ -1,4 +1,4 @@
-class NineSliceLayout extends ccui.Layout{
+class NineSliceLayout extends ccui.Layout{//Popup from pausing the game
     constructor(){
         super();
         this.setContentSize(cc.winSize);

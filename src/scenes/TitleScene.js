@@ -1,4 +1,4 @@
-class TitleScene extends cc.Scene{    
+class TitleScene extends cc.Scene{//Scene that contains the TitleLayer
     constructor(){
         super();
     }
