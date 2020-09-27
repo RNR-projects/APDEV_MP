@@ -1,8 +1,8 @@
-class BoardMaker extends cc.Component {
+class BoardMaker extends cc.Component {//Creates the board in which the game is played on
     onEnter() {
         super.onEnter();
     }
-
+    //Creates the blocks in the background that shows the boundaries of each tile
     CreateGrid() {
         for (var i = 0; i < 8; i++) {
             for (var j = 0; j < 8; j++) {
@@ -12,7 +12,7 @@ class BoardMaker extends cc.Component {
             }
         }
     }
-
+    //Fills the created blocks above with tiles with random types
     FillWithTiles() {
         for (var i = 0; i < 8; i++) {
             var eachRow = [];

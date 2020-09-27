@@ -1,14 +1,14 @@
-class BoardInteractibility extends cc.Component {
+class BoardInteractibility extends cc.Component {//Behavior in charge of processing player input
     onEnter() {
         super.onEnter();
     }
-
+    //initializes the variables
     Init() {
         this.selectedTileX = 0;
         this.selectedTileY = 0;
         this.isSwappingTiles = false;
     }
-
+    //Processes player input for which of the block buttons is pressed and will swap the tiles if two consecutive button presses are on adjacent blocks
     SelectTile(xIndex, yIndex) {
         if (!this.isSwappingTiles) {
             this.selectedTileX = xIndex;
@@ -17,7 +17,7 @@ class BoardInteractibility extends cc.Component {
         }
         else {
             this.isSwappingTiles = false;
-
+            //if the blocks are not adjacent do nothing, else swap the tiles in the blocks
             if ((xIndex == this.selectedTileX && (yIndex == this.selectedTileY + 1 || yIndex == this.selectedTileY - 1)) ||
                 (yIndex == this.selectedTileY && (xIndex == this.selectedTileX + 1 || xIndex == this.selectedTileX - 1))) {
                 if (this.selectedTileX < xIndex) {

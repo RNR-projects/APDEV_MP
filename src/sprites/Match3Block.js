@@ -1,4 +1,4 @@
-class Match3Block extends ccui.Layout{
+class Match3Block extends ccui.Layout{//The Blocks that are static in the game/background for the moving pieces
     constructor(xPosition, yPosition, xIndex, yIndex) {
         super();
         this.setContentSize(cc.winSize);
@@ -12,7 +12,7 @@ class Match3Block extends ccui.Layout{
 
         this.createButton();
     }
-
+    //draws the block which happens to be a button
     createButton() {
         let button = new ccui.Button(res.Block_png, res.Block_png);
 

@@ -1,4 +1,4 @@
-class PauseLayout extends ccui.Layout{
+class PauseLandscapeLayout extends ccui.Layout{//Pause button position for Landscape orientation
     constructor(){
         super();
         this.setContentSize(cc.winSize);

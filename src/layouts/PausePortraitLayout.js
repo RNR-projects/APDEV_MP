@@ -1,4 +1,4 @@
-class PausePortraitLayout extends ccui.Layout {
+class PausePortraitLayout extends ccui.Layout {//Pause button position for Portrait orientation
     constructor() {
         super();
         this.setContentSize(cc.winSize);
@@ -7,7 +7,7 @@ class PausePortraitLayout extends ccui.Layout {
         this.createButton();
         this.addComponent(new EnableOnPortrait());
     }
-
+ 
     createButton() {
         let button = new ccui.Button(res.Button9Slice_png, res.Button9SliceSelected_png);
 

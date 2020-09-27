@@ -1,4 +1,4 @@
-class TitleLayer extends cc.Layer{
+class TitleLayer extends cc.Layer{//Title screen UI
     constructor(){
         super();
 

@@ -1,4 +1,4 @@
-class ResultScene extends cc.Scene{    
+class ResultScene extends cc.Scene{//Scene that contains the ResultLayer
     constructor(score){
         super();
         this.finalscore = score;
